@@ -13,12 +13,6 @@ void dMenu(){
     cout << "Masukan angka :";        
 }
 
-void mPertama(string pesan){
-system("cls");
-cout<<"hallo saya menu "<<pesan;
-getch();
-}
-
 void input(int data[]){
     system("cls");
     
@@ -32,6 +26,7 @@ void input(int data[]){
 
 void output(int data[]){
     system("cls");
+
     // Menampilkan data
     cout << "\nData yang Anda masukkan adalah:\n";
     for (int i = 0; i < 5; i++)
@@ -41,6 +36,26 @@ void output(int data[]){
     getch();
 }
 
+void sorting(int data[]) {
+    system("cls");
+    
+    // Exchange Sort
+    for (int i = 0; i < 5 - 1; i++) {
+        for (int j = i + 1; j < 5; j++) {
+            if (data[i] > data[j]) {
+                int temp = data[i];
+                data[i] = data[j];
+                data[j] = temp;
+            }
+        }
+    }
+
+    cout << "Data setelah diurutkan (dari kecil ke besar):\n";
+    for (int i = 0; i < 5; i++) {
+        cout << "Angka ke-" << (i + 1) << ": " << data[i] << endl;
+    }
+    getch();
+}
 
 void sepatahKata(){
     system("cls");
@@ -63,7 +78,7 @@ int main() {
             output(data);
             break;  
         case '3':
-            mPertama("Ke - tiga");
+            sorting(data);
             break;  
         case '4':
             sepatahKata();
