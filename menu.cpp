@@ -30,6 +30,16 @@ void input(int data[]){
     getch();
 }
 
+void output(int data[]){
+    system("cls");
+    // Menampilkan data
+    cout << "\nData yang Anda masukkan adalah:\n";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Angka ke-" << (i + 1) << ": " << data[i] << endl;
+    }
+    getch();
+}
 
 
 void sepatahKata(){
@@ -50,7 +60,7 @@ int main() {
             input(data);
             break;
         case '2':
-            mPertama("Ke- dua");
+            output(data);
             break;  
         case '3':
             mPertama("Ke - tiga");
